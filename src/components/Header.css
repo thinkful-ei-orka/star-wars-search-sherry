@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  background-color: #000;
+}
+
+h1 {
+  text-align: center;
+  padding: 20px;  
+  color: #E18A07;
+  font-size: 4em;
+  border-bottom: #C0C0C0 1px solid;
+}
