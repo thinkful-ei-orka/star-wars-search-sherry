@@ -2,6 +2,7 @@ import React from 'react';
 
 import './SearchForm.css'
 import ResultDisplay from './ResultDisplay';
+import SearchError from '../SearchError';
 
 class SearchForm extends React.Component {
   constructor(props) {
@@ -27,7 +28,7 @@ class SearchForm extends React.Component {
       this.setState({
         results: data.results.map(result => result.name),
         touched: true,
-        searching: false
+        searching: false,
       });
     })
     .catch(err => {
@@ -46,7 +47,9 @@ class SearchForm extends React.Component {
           <input type="text" id="search" name="search" placeholder="Are these the droids you're looking for?" />
           <button type="submit">Use the force</button>
         </form>
-        <ResultDisplay results={this.state.results} touched={this.state.touched} searching={this.state.searching}/>
+        <SearchError>
+          <ResultDisplay results={this.state.results} touched={this.state.touched} searching={this.state.searching}/>
+        </SearchError>
       </div>
 
 
