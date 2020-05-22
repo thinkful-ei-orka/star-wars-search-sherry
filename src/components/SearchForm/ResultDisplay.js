@@ -10,6 +10,8 @@ function ResultDisplay(props) {
       return props.results.map((name, i) =>  <li className="result" key={i}>{name}</li>)
     } else if(props.touched  && props.results.length === 0) {
       return <li className="result" key="0">No such droids exist</li>
+    } else if(props.searching === true) {
+      return <li className="searching" key="0">Searching the galaxy</li>
     }
   } 
 
