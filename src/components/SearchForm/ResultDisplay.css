@@ -23,3 +23,16 @@ li.result:nth-child(odd) {
 li.result:nth-child(even) {
   color: #c0c0c0;
 }
+
+@keyframes search {
+  from {color: #c0c0c0;}
+  to {color: #e18a07;}
+}
+
+.searching {
+  padding: 5px;
+  font-size: 1.1em;
+  animation-name: search;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}

@@ -29,11 +29,11 @@ class SearchForm extends React.Component {
         touched: true,
         searching: false
       });
-      console.log(this.state)
     })
     .catch(err => {
       console.log(err)
     });
+    e.target.search.value = '';
   }
 
   render() {
