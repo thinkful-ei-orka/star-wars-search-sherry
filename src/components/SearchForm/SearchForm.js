@@ -7,7 +7,8 @@ class SearchForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      results: []
+      results: [],
+      touched: false
     }
   }
 
@@ -22,8 +23,10 @@ class SearchForm extends React.Component {
     })
     .then(data => {
       this.setState({
-        results: data.results.map(result => result.name)
+        results: data.results.map(result => result.name),
+        touched: true
       });
+      console.log(this.state)
     })
     .catch(err => {
       console.log(err)
@@ -40,7 +43,7 @@ class SearchForm extends React.Component {
           <input type="text" id="search" name="search" placeholder="Are these the droids you're looking for?" />
           <button type="submit">Use the force</button>
         </form>
-        <ResultDisplay results={this.state.results}/>
+        <ResultDisplay results={this.state.results} touched={this.state.touched}/>
       </div>
 
 
