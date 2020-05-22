@@ -4,6 +4,13 @@ import './SearchForm.css'
 import ResultDisplay from './ResultDisplay';
 
 class SearchForm extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      results: []
+    }
+  }
+  
   render() {
     return (
       <div>
