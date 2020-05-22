@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.result-display {
+  padding: 15px;  
+}
+
+.result-list {
+  list-style: none;
+}
+
+.result {
+  padding: 5px;
+  font-size: 1.1em;
+}
+
+li.result:nth-child(odd) {
+  color: #e18a07;
+}
+
+li.result:nth-child(even) {
+  color: #c0c0c0;
+}
