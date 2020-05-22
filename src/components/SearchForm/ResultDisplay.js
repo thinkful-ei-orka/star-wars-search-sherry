@@ -3,13 +3,15 @@ import React from 'react';
 import './ResultDisplay.css'
 
 function ResultDisplay(props) {
+
+  function renderLis(props) {
+    return props.results.map((name, i) =>  <li className="result" key={i}>{name}</li>)
+  } 
+
   return (
     <div className="result-display">
       <ul className="result-list">
-        <li className="result">Darth Vader</li>
-        <li className="result">Leia</li>
-        <li className="result">CHEWY!!</li>
-        <li className="result">*Chewy noise in the distance*</li>
+        {renderLis(props)}
       </ul>
     </div>
   )

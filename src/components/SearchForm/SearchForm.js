@@ -14,7 +14,20 @@ class SearchForm extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const searchTerm = e.target.search.value;
-    console.log(searchTerm);
+    fetch(`https://swapi.dev/api/people/?search=${searchTerm}`)
+    .then(res => {
+      if(!res.ok) {
+        res.json().then(e => Promise.reject(e))
+      } return res.json()
+    })
+    .then(data => {
+      this.setState({
+        results: data.results.map(result => result.name)
+      });
+    })
+    .catch(err => {
+      console.log(err)
+    });
   }
 
   render() {
@@ -27,7 +40,7 @@ class SearchForm extends React.Component {
           <input type="text" id="search" name="search" placeholder="Are these the droids you're looking for?" />
           <button type="submit">Use the force</button>
         </form>
-        <ResultDisplay />
+        <ResultDisplay results={this.state.results}/>
       </div>
 
 
